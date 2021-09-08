@@ -1,12 +1,16 @@
 ﻿using Entities;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Data.SqlClient;
+using Dapper;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ORM
 {
-    public class TodoRepository : Interfaces.ITodoRepository
+    public class TodoRepository : RepositoryConnector, Interfaces.ITodoRepository
     {
+        public TodoRepository(IConfiguration config): base (config){}
         public void Add(ToDo obj)
         {
             throw new NotImplementedException();
@@ -19,7 +23,13 @@ namespace ORM
 
         public IEnumerable<ToDo> GetAll()
         {
-            throw new NotImplementedException();
+            IEnumerable<ToDo> retorno;
+            string sql = "SELECT *FROM Todo";
+            using (var con = new SqlConnection(base.GetConnection()))
+            {
+                retorno = con.Query<ToDo>(sql);
+            }
+            return retorno;
         }
 
         public void Remove(ToDo obj)

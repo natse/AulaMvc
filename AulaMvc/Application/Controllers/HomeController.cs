@@ -1,6 +1,7 @@
 ﻿using Application.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ORM.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,27 +12,17 @@ namespace Application.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ITodoRepository _todoRepository;
+        public HomeController(ITodoRepository todoRepositiry)
         {
-            _logger = logger;
+            _todoRepository = todoRepositiry;
         }
-
         public IActionResult Index()
         {
+            var resultado = _todoRepository.GetAll();
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+      
     }
 }
