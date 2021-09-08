@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "biJtZjqTpEZIdC2KRHRkXJy3XEJ84sldf0px6cej6Q3R43ahIHPCU7EeX4hYl5Rp7FfZl71Y5TpBvaxRKXnJfA==",
+  "dgSpecHash": "P75HpPg0+eL3lJ9JOtO29Xwydihm4kJsVJT6AQeI4vesECcNnJ40+RYhbIgPXjaGJyDeTAmfPLKKqdZUmMM+8Q==",
   "success": true,
   "projectFilePath": "D:\\Falcudade\\MVC\\AulaMvc\\AulaMvc\\ORM\\ORM.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\natse\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.9\\microsoft.entityframeworkcore.analyzers.5.0.9.nupkg.sha512",
     "C:\\Users\\natse\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\natse\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
+    "C:\\Users\\natse\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\natse\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\natse\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\natse\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
