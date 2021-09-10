@@ -26,6 +26,11 @@ namespace Application.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Cadastrar(Entities.ToDo obj)
+        {
+            return View();
+        }
       
     }
 }
