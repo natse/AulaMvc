@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "boobst@0.7.2",
+      "destination": "wwwroot/lib/boobst04/"
+    }
+  ]
+}
