@@ -29,7 +29,8 @@ namespace Application.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Entities.ToDo obj)
         {
-            return View();
+            _todoRepository.Add(obj);
+            return View("Index", _todoRepository.GetAll());
         }
       
     }

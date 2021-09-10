@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using Dapper;
+
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ORM
@@ -13,7 +13,13 @@ namespace ORM
         public TodoRepository(IConfiguration config): base (config){}
         public void Add(ToDo obj)
         {
-            throw new NotImplementedException();
+            dynamicParemeters pam = new dynamicParemeters();
+            pam.Add("@Tarefa", obj.Tarefa);
+            string sql = "INSERT INTO Todo (Tarefa) VALUES(@Tarefa)";
+            using (var con = new SqlConnection(base.GetConnection()))
+            {
+                con.Execute(sql, pam);
+            }
         }
 
         public ToDo Get(int id)
