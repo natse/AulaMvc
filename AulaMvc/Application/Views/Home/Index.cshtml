@@ -1,8 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Entities.ToDo>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="card">
+    <div class="card-header">Tarefas a fazer</div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tarefa</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Tarefa</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        @Html.ActionLink("Cadastrar Tarefa", "Cadastrar", "Home", null, new {@class = "btn btn-success btn-sm"})
+    </div>
 </div>

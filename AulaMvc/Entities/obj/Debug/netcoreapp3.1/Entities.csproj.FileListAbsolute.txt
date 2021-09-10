@@ -1,0 +1,10 @@
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.AssemblyReference.cache
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+D:\Falcudade\MVC\AulaMvc\AulaMvc\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
