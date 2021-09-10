@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using Dapper;
+using Entities;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,12 @@ namespace ORM
 
         public ToDo Get(int id)
         {
-            throw new NotImplementedException();
+            string sql = $"SELECT * FROM Todo WHERE Id = {id}";
+            using (var con = new SqlConnection(base.GetConnection()))
+            {
+                return con.Query<ToDo>(sql).FirsOrDefault();
+            }
+
         }
 
         public IEnumerable<ToDo> GetAll()
@@ -45,7 +51,15 @@ namespace ORM
 
         public void Update(ToDo obj)
         {
-            throw new NotImplementedException();
+            string sql = $@"UPDATE FROM
+                            Todo SET Tarefa = 
+                            @Tarefa WHERE Id = {obj.Id}";
+            DynamicParameters pam = new DynamicParameters();
+            pam.Add("@Tarefa", obj.Tarefa);
+            using (var con = new SqlConnection(base.GetConnection()))
+            {
+                con.Execute(sql, pam);
+            }
         }
     }
 }

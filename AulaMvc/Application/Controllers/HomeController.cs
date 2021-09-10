@@ -32,6 +32,10 @@ namespace Application.Controllers
             _todoRepository.Add(obj);
             return View("Index", _todoRepository.GetAll());
         }
+        public IActionResult Editar(int id)
+        {
+            return View(_todoRepository.Get(id));
+        }
       
     }
 }
