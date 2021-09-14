@@ -11,6 +11,7 @@
    
     <div class="container mt-5">
         <main role="main" class="pb-3">
+            @Application.Models.Notification.Get(TempData)
             @RenderBody()
         </main>
     </div>

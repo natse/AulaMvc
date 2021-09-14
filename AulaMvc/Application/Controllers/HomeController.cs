@@ -29,8 +29,18 @@ namespace Application.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Entities.ToDo obj)
         {
-            _todoRepository.Add(obj);
-            return View("Index", _todoRepository.GetAll());
+            if (ModelState.IsValid)
+            {
+                _todoRepository.Add(obj);
+                Notification.Set(TempData, new Notificacao() { Mensagem = "A tarafe foi cadastrar com sucesso.", Tipo = TipoNotificacao.success });
+                return View("Index", _todoRepository.GetAll());
+            }
+            else
+            {
+                Notification.Set(TempData, new Notificacao() { Mensagem = "Não foi possivel cadastrar essa tarefa.", Tipo = TipoNotificacao.danger });
+
+                return View();
+            }
         }
         public IActionResult Editar(int id)
         {
@@ -39,8 +49,18 @@ namespace Application.Controllers
         [HttpPost]
         public IActionResult Editar(Entities.ToDo obj)
         {
-            _todoRepository.Update(obj);
-            return View("Index", _todoRepository.GetAll());
+            if (ModelState.IsValid)
+            {
+                _todoRepository.Update(obj);
+                Notification.Set(TempData, new Notificacao() { Mensagem = "A tarafe foi editar com sucesso.", Tipo = TipoNotificacao.success });
+                return View("Index", _todoRepository.GetAll());
+            }
+            else
+            {
+                Notification.Set(TempData, new Notificacao() { Mensagem = "Não foi possivel editar essa tarefa.", Tipo = TipoNotificacao.danger });
+
+                return View();
+            }
         }
         public IActionResult Remover(int id)
         {
