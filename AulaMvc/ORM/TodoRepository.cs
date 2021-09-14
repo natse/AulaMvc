@@ -14,7 +14,7 @@ namespace ORM
         public TodoRepository(IConfiguration config): base (config){}
         public void Add(ToDo obj)
         {
-            dynamicParemeters pam = new dynamicParemeters();
+            DynamicParemeters pam = new DynamicParemeters();
             pam.Add("@Tarefa", obj.Tarefa);
             string sql = "INSERT INTO Todo (Tarefa) VALUES(@Tarefa)";
             using (var con = new SqlConnection(base.GetConnection()))
