@@ -42,6 +42,15 @@ namespace Application.Controllers
             _todoRepository.Update(obj);
             return View("Index", _todoRepository.GetAll());
         }
+        public IActionResult Remover(int id)
+        {
+            return View(_todoRepository.GetAll());
+        }
+        public IActionResult ConfirmaRemover(int id)
+        {
+            _todoRepository.Remove(_todoRepository.Get(id));
+            return View("Index", _todoRepository.GetAll());
+        }
       
     }
 }

@@ -4,8 +4,9 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using static Dapper.SqlMapper;
 
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace ORM
 {
@@ -28,7 +29,7 @@ namespace ORM
             string sql = $"SELECT * FROM Todo WHERE Id = {id}";
             using (var con = new SqlConnection(base.GetConnection()))
             {
-                return con.Query<ToDo>(sql).FirsOrDefault();
+                return con.Query<ToDo>(sql).FirstOrDefault();
             }
 
         }
@@ -46,12 +47,16 @@ namespace ORM
 
         public void Remove(ToDo obj)
         {
-            throw new NotImplementedException();
+            string sql = $"DELETE FROM Todo WHERE Id = {obj.Id}";
+            using(var con = new SqlConnection(base.GetConnection()))
+            {
+                con.Execute(sql);
+            }
         }
 
         public void Update(ToDo obj)
         {
-            string sql = $@"UPDATE FROM
+            string sql = $@"UPDATE
                             Todo SET Tarefa = 
                             @Tarefa WHERE Id = {obj.Id}";
             DynamicParameters pam = new DynamicParameters();

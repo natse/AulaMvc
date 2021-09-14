@@ -1,0 +1,9 @@
+﻿@model Entities.ToDo
+
+<div class="card">
+    <div class="card-header">Cadastrar Tarefa</div>
+    <div class="card-body">Você deseja remover a tarefa @model.Tarefa?<br />
+    @Html.ActionLink("Sim","ConfirmaRemover","Home",new{id = Model.Id}, new { @class="btn-danger btn-sm"})
+    @html.ActionLink("Volta","Index","Home", null,new {@class="btn btn-light btn-sm"})
+    </div>
+</div>
